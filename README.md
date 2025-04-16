@@ -1,5 +1,5 @@
-🏠 Housing Price Predictor API
-A simple Flask-based machine learning API that predicts housing prices using a regression model trained on a housing dataset.
+🏠 *Housing Price Predictor API
+A simple Flask-based machine learning API that predicts housing prices using a regression model trained on a housing dataset.*
 
 📦 Project Description
 This project demonstrates how to:
