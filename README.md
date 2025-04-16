@@ -1,75 +1,40 @@
-🏠 *Housing Price Predictor API
-A simple Flask-based machine learning API that predicts housing prices using a regression model trained on a housing dataset.*
+# 🏠 Housing Price Predictor API
 
-📦 Project Description
-This project demonstrates how to:
+A simple Flask-based machine learning API that predicts housing prices based on various features like area, number of bedrooms, bathrooms, and more. The model is trained using a dataset of housing properties and deployed via Docker.
 
-Train a regression model to predict housing prices
+---
 
-Serve the model using a Flask API
+## 🚀 Features
 
-Dockerize the API for easy deployment
+- Predict house price using regression
+- Supports multiple input requests
+- Input validation with helpful error messages
+- Dockerized for easy deployment
 
-Validate and handle inputs
+---
 
-Return prediction results in JSON format
+## 📦 Setup Instructions
 
-⚙️ Setup Instructions
-1. Clone the repo
-bash
-Copy
-Edit
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/yourusername/housing-price-predictor.git
-cd housing-app
-2. Prepare your environment
-Install Python packages:
+cd housing-price-predictor
+```
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-3. Run the app locally
-bash
-Copy
-Edit
+### 2. Train the Model (if not already trained)
+```bash
+python train_model.py
+```
+This will generate a model.pkl file.
+
+### 3. Run the Flask App
+```bash
 python house_app.py
-4. Or use Docker
-bash
-Copy
-Edit
-docker build -t housing-app .
-docker run -p 9000:9000 housing-app
-🚀 API Usage
-🔹 POST /predict
-Request:
+```
+Or run using Docker:
 
-json
-Copy
-Edit
-{
-  "features": [
-    [7420, 3, 2, 3, 1, 1, 0, 1, 0, 1, 2, 0, 1],
-    [8960, 4, 2, 2, 1, 0, 0, 0, 0, 1, 1, 1, 2]
-  ]
-}
-Note: The feature array corresponds to:
-[area, bedrooms, bathrooms, stories, mainroad, guestroom, basement, hotwaterheating, airconditioning, parking, prefarea, furnishingstatus]
-
-Response:
-
-json
-Copy
-Edit
-{
-  "predictions": [4750000.0, 3850000.0]
-}
-📁 File Structure
-bash
-Copy
-Edit
-housing-app/
-├── house_app.py           # Flask app
-├── model.pkl              # Trained regression model
-├── Dockerfile             # Docker config
-├── requirements.txt       # Python dependencies
-└── README.md              # Project documentation
+```bash
+docker build -t housing-price-predictor .
+docker run -p 9000:9000 housing-price-predictor
+```
